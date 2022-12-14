@@ -13,10 +13,8 @@ const Input = ({ setData }) => {
 	//Handling search submit
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		if (city) {
 			axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_KEY}`)
 				.then(res => setData(res.data))
-		}
 	}
 
 	return (

@@ -17,6 +17,9 @@ const CardCity = ({city, storage}) => {
     const [info, setInfo] = useState('');
     const [refresh, setRefresh] = useState(false)
 
+    console.log(info);
+    console.log(!!info);
+
     //Fetching data by refresh click or when city storage has changed
     useEffect(() => {
         axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_KEY}`)
