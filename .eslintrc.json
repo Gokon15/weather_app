@@ -1,37 +1,51 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:react-hooks/recommended",
-        "plugin:import/recommended",
-        "airbnb",
-        "prettier"
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "airbnb",
+    "prettier"
+  ],
+  "overrides": [
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
     ],
-    "overrides": [
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
     ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
     ],
-    "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "import/no-extraneous-dependencies": ["error",  {"devDependencies": true}],
-        "react/function-component-definition": [
-            2,
-            {
-                "namedComponents": "arrow-function",
-                "unnamedComponents": "arrow-function"
-            }
-        ],
-        "arrow-body-style": "error",
-        "react/prop-types": 0,
-        "prefer-template": "error"
-    }
+    "arrow-body-style": "error",
+    "react/prop-types": 0,
+    "prefer-template": "error",
+    "no-shadow": "off"
+  }
 }

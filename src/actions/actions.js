@@ -1,4 +1,3 @@
-//Set searched city
 export const setData = (data) => {
 	return {
 		type: "SET_CITY",
@@ -6,7 +5,6 @@ export const setData = (data) => {
 	}
 }
 
-//Set storage of cities
 export const setStorage = (data) => {
 	return {
 		type: "SET_STORAGE",
@@ -14,7 +12,6 @@ export const setStorage = (data) => {
 	}
 }
 
-//Add city to storage
 export const addCity = (data) => {
 	return {
 		type: "ADD_CITY",
@@ -22,7 +19,6 @@ export const addCity = (data) => {
 	}
 }
 
-//Remove city from storage
 export const removeCity = (data) => {
 	return {
 		type: "REMOVE_CITY",

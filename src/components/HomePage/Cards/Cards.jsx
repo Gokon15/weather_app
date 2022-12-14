@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import CardCity from './Card/Card'
+
 
 
 const Cards = ({ storage }) => (
@@ -13,6 +15,10 @@ const Cards = ({ storage }) => (
             <h2>No choosen cities yet</h2>}
     </div>
 )
+
+Cards.propTypes = {
+    storage: PropTypes.arrayOf(PropTypes.string).isRequired,
+}
 
 const mapStateToProps = (state) => {
     return {

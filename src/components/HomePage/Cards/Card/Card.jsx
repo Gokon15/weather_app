@@ -9,11 +9,11 @@ import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import ThermostatIcon from '@mui/icons-material/Thermostat'
 import OpacityIcon from '@mui/icons-material/Opacity'
-
+import PropTypes from 'prop-types'
 import Buttons from '../../../Buttons/Buttons'
 
 const CardCity = ({ city, storage }) => {
-    const API_KEY = '6c2847c395792f9cf85a804db24ced16'
+    const API_KEY = 'fa409d51d2fbf7b2eb2a6f676d5ee223'
 
     const [info, setInfo] = useState('')
     const [refresh, setRefresh] = useState(false)
@@ -47,11 +47,10 @@ const CardCity = ({ city, storage }) => {
                                         <p className='text-xl '>
                                             <ThermostatIcon /> ~ {`${Math.round(info.main.temp)}\u00B0C`}
                                         </p>
-                                        <p className='text-xl  '>
-                                            <p className=' text-xl mb-2'>
-                                                <OpacityIcon /> {Math.round(info.main.humidity) + '%'}</p>
-                                        </p>
-                                        <Link to={{ pathname: '/info', state: info }} />
+                                        <h3 className='text-xl  '>
+                                            <h3 className=' text-xl mb-2'>
+                                                <OpacityIcon /> {Math.round(info.main.humidity) + '%'}</h3>
+                                        </h3>
                                     </Typography>
                                 </Link>
                             </CardContent>
@@ -63,6 +62,11 @@ const CardCity = ({ city, storage }) => {
                 </>) : null}
         </div>
     )
+}
+
+CardCity.propTypes = {
+    city: PropTypes.string.isRequired,
+    storage: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 const mapStateToProps = (state) => {

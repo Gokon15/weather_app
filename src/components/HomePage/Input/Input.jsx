@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import { Button, TextField } from '@mui/material'
+import PropTypes from 'prop-types'
 import { setData } from '../../../actions/actions'
 
 
 const Input = ({ setData }) => {
-
     const [city, setCity] = useState('')
 
     const API_KEY = 'fa409d51d2fbf7b2eb2a6f676d5ee223'
@@ -26,6 +26,10 @@ const Input = ({ setData }) => {
             </form>
         </div>
     )
+}
+
+Input.propTypes = {
+    setData: PropTypes.func.isRequired,
 }
 
 const mapDispatchToProps = (dispatch) => {
