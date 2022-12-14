@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
+import PropTypes, { string } from 'prop-types'
 import CardMedia from '@mui/material/CardMedia'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
@@ -11,7 +11,6 @@ import Add from './Add/Add'
 
 
 const SearchedWeather = ({ currentCity }) => {
-    console.log(currentCity)
     return (
         <div>
             {currentCity ?
@@ -46,11 +45,11 @@ const SearchedWeather = ({ currentCity }) => {
 }
 
 SearchedWeather.propTypes = {
-    currentCity: PropTypes.shape({
+    currentCity: PropTypes.oneOfType([string, PropTypes.shape({
         name: PropTypes.string,
         country: PropTypes.string,
         temp: PropTypes.string,
-    }).isRequired,
+    }),]).isRequired,
 
 }
 
