@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import AddIcon from '@mui/icons-material/Add'
 import { Button } from '@mui/material'
 import PropTypes from 'prop-types'
+
 import { setStorage, addCity } from '../../../../actions/actions'
 
 const Add = ({ currentCity, setStorage, storage, addCity }) => {

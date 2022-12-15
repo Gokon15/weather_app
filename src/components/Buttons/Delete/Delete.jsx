@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Button } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete'
 import PropTypes from 'prop-types'
+
 import { setStorage, removeCity } from '../../../actions/actions'
 
 

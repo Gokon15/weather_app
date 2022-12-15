@@ -43,9 +43,11 @@
         "unnamedComponents": "arrow-function"
       }
     ],
-    "arrow-body-style": "error",
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
     "react/prop-types": 0,
     "prefer-template": "error",
-    "no-shadow": "off"
+    "no-shadow": "off",
+    "no-array-index-key": "off"
   }
 }

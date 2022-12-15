@@ -12,7 +12,6 @@ import AirIcon from '@mui/icons-material/Air'
 import OpacityIcon from '@mui/icons-material/Opacity'
 import CompressIcon from '@mui/icons-material/Compress'
 import ThermostatIcon from '@mui/icons-material/Thermostat'
-
 import WbTwilightIcon from '@mui/icons-material/WbTwilight'
 
 const Info = () => {
@@ -23,7 +22,7 @@ const Info = () => {
     }
 
     return (
-        <>
+        <div>
             <div className='flex items-center justify-center h-screen'>
                 <Card sx={{ maxWidth: 450 }}>
                     <CardMedia
@@ -40,11 +39,11 @@ const Info = () => {
                             <p className='flex justify-center text-xl mb-2'>
                                 <ThermostatIcon />{`${Math.round(location.state.main.temp)}\u00B0C`}</p>
                             <p className='flex justify-center text-xl mb-2'>
-                                <CompressIcon /> {Math.round(location.state.main.pressure) + 'mm'} </p>
+                                <CompressIcon /> {`${Math.round(location.state.main.pressure)}mm`}  </p>
                             <p className='flex justify-center text-xl mb-2'>
-                                <OpacityIcon /> {Math.round(location.state.main.humidity) + '%'}</p>
+                                <OpacityIcon /> {`${Math.round(location.state.main.humidity)}%`}</p>
                             <p className='flex justify-center text-xl mb-2'>
-                                <AirIcon /> {location.state.wind.speed + 'm/s'}</p>
+                                <AirIcon /> {`${Math.round(location.state.wind.speed)}m/s`}</p>
                             <p className='flex justify-center text-xl'>
                                 <WbTwilightIcon /> {handleTime(location.state.sys.sunset)}</p>
                         </Typography>
@@ -56,7 +55,7 @@ const Info = () => {
                     </CardActions>
                 </Card>
             </div>
-        </>
+        </div>
     )
 }
 

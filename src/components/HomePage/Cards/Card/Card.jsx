@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography'
 import ThermostatIcon from '@mui/icons-material/Thermostat'
 import OpacityIcon from '@mui/icons-material/Opacity'
 import PropTypes from 'prop-types'
+
 import Buttons from '../../../Buttons/Buttons'
 
 const CardCity = ({ city, storage }) => {
@@ -27,7 +28,7 @@ const CardCity = ({ city, storage }) => {
     return (
         <div>
             {info ?
-                (<>
+                (<div>
                     <Card sx={{ maxWidth: 345 }}>
                         <Link className='card__link' to={{ pathname: '/info', state: info }}>
                             <CardMedia
@@ -49,7 +50,7 @@ const CardCity = ({ city, storage }) => {
                                         </p>
                                         <h3 className='text-xl  '>
                                             <h3 className=' text-xl mb-2'>
-                                                <OpacityIcon /> {Math.round(info.main.humidity) + '%'}</h3>
+                                                <OpacityIcon /> {`${Math.round(info.main.humidity)}%`}</h3>
                                         </h3>
                                     </Typography>
                                 </Link>
@@ -59,7 +60,7 @@ const CardCity = ({ city, storage }) => {
                             <Buttons info={info} setRefresh={setRefresh} refresh={refresh} />
                         </CardActions>
                     </Card>
-                </>) : null}
+                </div>) : null}
         </div>
     )
 }
